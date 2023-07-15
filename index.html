@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Jeu de Sudoku</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="night-mode.css" />
+  </head>
+  <body>
+    <nav class="app-bar">
+      <button
+        onclick="HamburgerButtonClick();"
+        class="button bar-button hamburger-button"
+      >
+        <span class="material-icons">menu</span>
+      </button>
+      <div class="bar-font title">Sudoku</div>
+    </nav>
+
+    <div id="sudoku-grid"></div>
+    <div class="difficulty-wrapper">
+      <label for="difficulty">difficulté :</label>
+      <select id="difficulty">
+        <option value="20">Facile</option>
+        <option value="40">Moyen</option>
+        <option value="60">Difficile</option>
+      </select>
+    </div>
+
+    <p id="timer">00:00</p>
+    <div class="timer-buttons-container">
+      <button class="timer-button" id="start">Démarrer</button>
+      <button class="timer-button" id="pause">Pause</button>
+      <button class="timer-button" id="resume">Reprendre</button>
+      <button class="timer-button" id="reset">Réinitialiser</button>
+    </div>
+
+    <div class="container">
+      <section class="info-section-left">
+        <h1 itemprop="name" class="info-section-title">Instructions</h1>
+        <div class="info-section-text" itemprop="description">
+          <p>
+            Le Sudoku, ce jeu de puzzle qui a conquis le monde entier.
+            L'objectif est simple : remplir une grille de 9x9 avec des chiffres
+            de telle sorte que chaque ligne, chaque colonne et chaque section de
+            3x3 contiennent tous les chiffres de 1 à 9. Plus qu'un simple
+            divertissement, le Sudoku est un formidable outil de développement
+            cérébral. En faisant travailler votre logique quotidiennement, vous
+            constaterez une amélioration de votre concentration et de votre
+            activité cérébrale. N'attendez plus et découvrez pourquoi le Sudoku
+            est devenu un des jeux en ligne préférés de tant de personnes.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="sudoku.js"></script>
+
+    <div id="hamburger-menu" class="hamburger-menu">
+      <nav id="nav-menu" class="nav-menu">
+        <div class="nav-head">
+          <div class="nav-head-img">
+            <img src="https://image.ibb.co/jmuOKn/icon.jpg" alt="" />
+          </div>
+          <div class="nav-head-title">Sudoku</div>
+        </div>
+        <ul class="nav-items">
+          <li>
+            <button
+              onclick="generateGrid()"
+              class="button nav-item vertical-adjust"
+            >
+              <div>
+                <span>Générer une nouvelle grille</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="resetGrid()"
+              class="button nav-item vertical-adjust"
+            >
+              <div>
+                <span>Réinitialiser</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="sudokuSolverMenuClick()"
+              class="button nav-item vertical-adjust"
+            >
+              <div>
+                <span>Sudoku Solver</span>
+              </div>
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="night()"
+              class="button nav-item vertical-adjust"
+            >
+              <div>
+                <button id="night-mode" class="button nav-item vertical-adjust"
+				onclick="toggleNightMode()">
+				<div>
+            </button>
+          </li>
+          <li>
+            <button
+              onclick="showInstructions()"
+              class="button nav-item vertical-adjust"
+            >
+              <div>
+                <span>Instructions</span>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-menu-blank" onclick="hideHamburgerClick()"></div>
+    </div>
+  </body>
+</html>
